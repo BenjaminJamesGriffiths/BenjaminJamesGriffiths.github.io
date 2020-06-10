@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web");
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to top, #212121,#263238);
+    background-repeat: no-repeat;
+}
+
+.body-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+/*############################
+####### NAVIGATION BAR #######
+############################*/
+.main-header {
+    border: 1px solid purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-header-home {
+    justify-content: left;
+}
+
+.main-nav {
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid red;
+}
+
+.main-nav ul {
+
+    border: 1px solid green;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.main-nav li {
+    border: 1px solid blue;
+    display: inline-block;
+    padding: 1em;
+}
+
+.main-nav a {
+    color: #bdbdbd;
+    font-family: "Titillium Web";
+    font-weight: bold;
+    text-decoration: none;
+    text-align: left;
+}
+
+/*####################
+##### CONTAINERS #####
+####################*/
+.flex-layout {
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex-v-center {
+    align-items: center;
+}
+
+.flex-row-item {
+    display: inline-block;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.tile-container {
+    background-color: #FCFCFC;
+    border-radius: 5px;
+    padding: 30px;
+    margin: 15px;
+}
+
+/*###########################
+######### HOME PAGE #########
+###########################*/
+.home-title-container {
+    display: block; 
+    text-align: center;
+}
+
+.main-title {
+    border: 1px solid red;;
+    display: inline-block;
+    border-right: 3px solid #bdbdbd;
+    margin-top: 80px;
+    padding-right: 40px;
+    color: #f5f5f5;
+    font-family: "Fjalla One";
+    font-size: 5vw;
+    text-align: center;
+    width: fit-content;
+}
+
+.main-title-small {
+    font-size: 2em;
+    margin: 20px 0 20px 0;
+    padding-right: 40px;
+}
+
+.home-left-side {
+    display: inline-block;
+    box-shadow: 1px 0px 15px 1px black;
+    width: 50%;
+    height: 100vh;
+}
+
+.home-right-side {
+    display: inline-block;
+    width: 50%;
+    background-image: url("../assets/images/home-background.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-body {
+    display: flex;
+}
+
+.home-text-container {
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 80px;
+    padding: 40px;    
+}
+
+.home-text {
+    color: #bdbdbd;
+    font-family: "Titillium Web";
+    font-size: 1.2em;
+}
+
+.tile-container {
+    background-color: #212121;
+    box-shadow: 3px 10px 30px -5px black;
+    border-radius: 15px;
+}
+
+/*###########################
+####### PROJECTS PAGE #######
+###########################*/
+
+
+
+
+
+

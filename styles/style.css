@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web");
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: linear-gradient(to top, #212121,#263238);
+    background-repeat: no-repeat;
+}
+
+.body-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+/*############################
+####### NAVIGATION BAR #######
+############################*/
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.main-header-home {
+    justify-content: left;
+}
+
+.main-nav li {
+    display: inline;
+    padding: 1em;   
+}
+
+.main-nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #bdbdbd;
+    font-family: "Titillium Web";
+    font-weight: bold;
+    transition: all 0.2s ease;
+    border-radius: 999px;
+    padding: 0.5em 1em;
+}
+
+.main-nav a:hover {
+    transform: scale(1.1);
+    background-color: #03a9f4;
+    color: white;
+}
+
+/*####################
+##### CONTAINERS #####
+####################*/
+.project-card-container {
+    display: flex;
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;  
+}
+
+.project-card-image-container {
+    display: inline-block;
+    text-align: right;
+    /* position: relative;
+    left: 20px; */
+}
+
+.project-card-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 3px 10px 30px -5px #212121;
+}
+
+.education-logo {
+    display: block;
+    height: 100px;
+    width: auto;
+    margin: 40px auto;
+}
+
+.skills-logo {
+    display: block;
+    height: 60px;
+    width: auto;
+    margin: 20px auto;
+}
+
+.info-tile {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #181818;
+    box-shadow: 3px 10px 30px -5px #212121;
+    width: fit-content;
+}
+
+.project-card-info-container {
+    /* position: relative;
+    right: 40px; */
+    margin: -40px;
+    display: inline-block;
+    width: 50%;
+}
+
+.project-card-info-title {
+    color: #03a9f4;
+    font-family: "Fjalla One";
+    font-size: 2em;
+}
+
+.heading-level-2 {
+    color: #90A4AE;
+    font-family: "Fjalla One";
+    font-size: 1.5em;
+    
+}
+
+.project-card-info-text {
+    color: #bdbdbd;
+    font-family: "Titillium Web";
+}
+
+.rounded-button {
+    border-radius: 999px;
+    height: 30px;
+    padding: 0 15px 0 15px;
+    font-family: "Titillium Web";
+    color: #fafafa;
+    background-color: #424242;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.rounded-button:hover {
+    background-color: #03a9f4;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.main-tile {
+    background-color: #212121;
+    box-shadow: 3px 10px 30px -5px #212121;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+.content-splitter {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.content-splitter:before, .content-splitter:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 1px solid #BDBDBD;
+    width: 20%; 
+    height: 1em;  
+}
+
+.skill-item {
+    padding: 20px;
+    text-align: center;
+}
+
+/*###########################
+######### HOME PAGE #########
+###########################*/
+.home-title-container {
+    display: block; 
+    text-align: center;
+}
+
+.main-title {
+    display: inline-block;
+    border-right: 3px solid #bdbdbd;
+    margin-top: 80px;
+    padding-right: 40px;
+    color: #f5f5f5;
+    font-family: "Fjalla One";
+    font-size: 5vw;
+    text-align: center;
+    width: fit-content;
+}
+
+.main-title-small {
+    font-size: 2em;
+    margin: 20px 0 20px 0;
+    padding-right: 40px;
+}
+
+.home-left-side {
+    display: inline-block;
+    box-shadow: 1px 0px 15px 1px black;
+    width: 50%;
+    height: 100vh;
+}
+
+.home-right-side {
+    display: inline-block;
+    width: 50%;
+    background-image: url("../assets/images/home-background.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-body {
+    display: flex;
+}
+
+.home-text-container {
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 80px;
+    padding: 40px;    
+}
+
+.home-text {
+    color: #bdbdbd;
+    font-family: "Titillium Web";
+    font-size: 1.2em;
+}
+
+.tile-container {
+    background-color: #212121;
+    box-shadow: 3px 10px 30px -5px black;
+    border-radius: 15px;
+}
+
+/*###########################
+####### PROJECTS PAGE #######
+###########################*/
+
+
+
+
+/*###########################
+########### FOOTER ##########
+###########################*/
+.main-footer {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    margin-top: 200px; 
+}
+
+.main-footer-home {
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.social-media-icon {
+    padding: 0 5px;
+    height: 30px;
+    width: 30px;
+    filter: invert(1);
+    transition: all 0.2s ease;
+}
+
+.social-media-icon:hover {
+    transform: scale(1.4);
+}
+
+.main-footer-text {
+    font-family: "Titillium Web";
+    color: #BDBDBD;
+}
+
+
+
+
+
