@@ -82,6 +82,10 @@ html, body {
     font-size: 1.5em;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 /*####################
 ##### CONTAINERS #####
 ####################*/
@@ -242,10 +246,6 @@ html, body {
     width: 50%;
 }
 
-.projects-info-text {
-    text-align: justify;
-}
-
 .rounded-button {
     border-radius: 999px;
     height: 30px;
@@ -266,50 +266,47 @@ html, body {
 /*##########################
 ### PROJECT DETAILS PAGE ###
 ##########################*/
-.project-section-tile {
+.image-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.project-section-text {
-    width: 50%;
-}
-
-.project-section-image {
-    width: 50%;
-}
-
-.image-grid-container {
-    display: flex;
-    vertical-align: middle;
-    margin: 10px;
-}
-
-.project-image-small {
+.project-image {
     align-self: center;
-}
-
-.project-image-medium {
-    align-self: center;
-    width: 200px;
-    height: auto;
     padding: 10px;
     border-radius: 20px;
+    object-fit: cover;
 }
 
-.project-image-large {
-    align-self: center;
+.image-small {
     width: 200px;
     height: auto;
-    padding: 10px;
-    border-radius: 20px;
 }
 
-.image-left {
-    float: left;
+.image-small-square {
+    width: 200px;
+    height: 200px;
 }
 
-.image-right {
-    float: right;
+.image-medium {
+    width: 400px;
+    height: auto;
+}
+
+.image-medium-square {
+    width: 400px;
+    height: 400px;
+}
+
+.image-large {
+    width: 600px;
+    height: auto;
+}
+
+.image-large-square {
+    width: 600px;
+    height: 600px;
 }
 
 /*###########################
