@@ -176,7 +176,7 @@ html, body {
     display: inline-block;
     width: 50%;
     background-image: url("../assets/images/home-background.jpg");
-    background-position: top right;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
