@@ -29,15 +29,151 @@
             </div>
             <div class="text-justify">
                 <p>
-                    
+                    In the first semester of my third year at university, I was accepted into the Sir William Siemens
+                    Challenge, which is organised by the Siemens talent acquisition team, and is hosted in the iForge,
+                    the university’s student makerspace. The challenge is spread across 3 days, and involves being put
+                    into a multidisciplinary engineering team with students from other universities around the country.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The challenge we faced was to design, manufacture and present a system capable of displaying data
+                    captured by the Siemens MindSphere technology installed around the Faculty of Engineering’s Diamond
+                    building in a creative and innovate way. This data included readings from temperature, Co2, noise,
+                    humidity and population sensors.
                 </p>
             </div>
             <div>
                 <div class="image-container">
-                    <img class="project-image image-small" src="../assets/images/">
-                    <img class="project-image image-small" src="../assets/images/">
-                    <img class="project-image image-small" src="../assets/images/">
+                    <img class="project-image image-medium"
+                        src="../assets/images/siemens-challenge/siemens-challenge-2.jpg">
+                    <img class="project-image image-medium"
+                        src="../assets/images/siemens-challenge/siemens-challenge-3.jpg">
                 </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    A couple of weeks before the event, we were introduced to our team and were able to start
+                    communicating ideas and coming up with a plan for the challenge. We decided that we wanted to design
+                    and build an ambitious marble run, where the data could be represented by factors such as the paths
+                    the marbles took, how frequently the marbles are returned to the start of the run etc.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I was responsible for designing the marble run elevation system and the track in CAD, ensuring that
+                    it can be manufactured using the tools and equipment the iForge has, and using the materials that
+                    are available. The first hurdle to overcome was to design an elevation system that could repeatedly
+                    take marbles back to the top of the track. Initial ideas were based around a pulley system which
+                    used a belt with platforms attached at regular intervals for the marbles to sit on. However, we
+                    realised pretty early on that it was not a design that could be easily or reliably produced in the
+                    time we had, so I came up with a simple, easy to manufacture elevation system.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-small-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-4.png">
+                    <img class="project-image image-small-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-5.jpg">
+                    <img class="project-image image-small-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-10.jpg">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    My elevator design contained a fixed chute for the marble to travel up, and a rotating blade that
+                    pushed the marbles up the chute. By ending the marble run at the base of the chute, the marbles
+                    could autonomously circulate round the track, and the frequency of marbles could be controlled by
+                    the speed of the rotating blade. The first design of the elevation system worked most of the time,
+                    but would occasionally stall the motor as the turbine blades contacted the marbles at quite a steep
+                    angle. To improve the design, the first half of the chute was modified with a curved profile so that
+                    the marble was gradually pushed in the upwards direction, reducing the stress on the motor.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-medium-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-6.png">
+                    <img class="project-image image-medium-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-9.jpg">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Other parts of the marble run were then designed, such as a cool spiral track using clear tubing,
+                    with a continuous string of NeoPixel LEDs to generate some cool lighting animations. At the top of
+                    the chute, a splitter was designed to guide the incoming marbles in two different directions, using
+                    a servo motor that could shut off one lane at a time. The marbles could either be directed down the
+                    spiral tubing, or onto a series of straight acrylic tracks. The first part of the acrylic track had
+                    a series of solenoids, that would randomly fire, potentially pushing marble onto the track below – a
+                    feature that was supposed to represent the noise around the diamond (as the solenoids were very
+                    loud). Both the spiral and straight track combined at the bottom of the marble run, into a funnel
+                    that stored the marbles and fed them individually back into the elevator chute.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    All the electromechanical devices and the LEDs were controlled using a Teensy 3 microcontroller,
+                    which was programmed in the Arduino environment. All the electronics were soldered onto a sheet of
+                    vero board, which was stored under the base of the marble run.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Most of the parts were manufactured using the iForge laser cutters, which meant the final system
+                    fitted together exactly as design in CAD. The main frame of the marble run was made using maker
+                    beam, which was provided in the kit, and the rest of the items were either bolted together or glued.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-medium-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-7.jpg">
+                    <img class="project-image image-medium-square"
+                        src="../assets/images/siemens-challenge/siemens-challenge-8.jpg">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    As the third and final day of work came to a close, the pressure to get everything completed and
+                    working for the final presentation was rising. A clumsy mistake meant one of the 5V power supplies
+                    got shorted out, killing the Teensy, which meant none of the LEDs, solenoids or motors controllers
+                    could be operated. With just minutes to spare, we decided to at least get the marble run working, by
+                    hooking up the turbines geared DC brushed motors to a buck regulator - even if there wasn’t going to
+                    be any pretty lighting effects or solenoid action.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Our time to present came along, and thankfully, whilst we were explaining our design process and
+                    team roles to the panel of judges and other teams, the marble run continued to operate flawlessly in
+                    the background, albeit a little loud.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Whilst we didn’t win the challenge, the event was a fantastic opportunity to develop friendships,
+                    network with other students and Siemens graduates, and learn some new skills. Furthermore, I was
+                    personally offered a 12-week internship with Siemens as result of the competition.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Later on in the year, the iForge wanted to put our marble run on display. This gave us the chance to
+                    re-design some aspects of the elevator mechanism and track. We spent several hours designing and
+                    manufacturing new parts of the marble run, and enclosed the entire thing in a clear acrylic
+                    container so that people can operate it whilst on display.
+                </p>
+            </div>
+            <div class="image-container">
+                <video class="project-image image-medium" width="400" height="auto" controls>
+                    <source src="../assets/images/siemens-challenge/marble-run-demo.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 17/06/2020)
             </div>
         </section>
     </main>
@@ -47,10 +183,10 @@
         </span>
         <nav class="footer-links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/linkedin-icon.png"></a></li>
-                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/github-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/linkedin-icon.png"></a></li>
+                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/github-icon.png"></a></li>
                 <li><a href="https://www.facebook.com/benjamin.griffiths.12" target="_blank"><img
                             class="social-media-icon" src="../assets/images/social-media/facebook-icon.png"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCVTjSwM3nGNfFX8bpMJtm_Q" target="_blank"><img
