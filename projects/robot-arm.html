@@ -22,15 +22,153 @@
             </ul>
         </nav>
     </header>
-    <main class="body-container main-tile">
-        <div>
-            <span class="project-card-info-title">Desktop Robot Arm</span>
-        </div>
-        <p class="project-card-info-text">
-
-        </p>
-
-
+    <main class="body-container">
+        <section class="tile main-tile">
+            <div>
+                <span class="heading-1">Desktop Robot Arm</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I’ve always found that learning by doing is the most effective approach for learning a new skill,
+                    and that’s exactly what this project was all about. After being introduced to CAD, in particular,
+                    Autodesk Fusion 360 during project Moonworks, I realised that I wanted to learn more and get the
+                    chance to manufacture my own designs. I also have an interest in robotics, so I thought a good
+                    project to learn Fusion 360 with would be to design my own desktop sized robot arm.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-medium-square" src="../assets/images/robot-arm/robot-arm-3.jpg">
+                    <img class="project-image image-medium-square" src="../assets/images/robot-arm/robot-arm-4.jpg">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    From the very start, I knew that I wanted a design where the arms end effector would stay at the
+                    same angle, no matter the position of the other axes – similar to commercial robots that are often
+                    used to picking and placing objects onto pallets. This meant using parallelograms for the lower and
+                    upper sections of the arm, where a series or rods that are fixed to the base and the arms joints
+                    connect to the end effector, controlling its rotation.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    For powering the joints, I wanted to use NEMA 17 stepper motors as they were readily available and
+                    cheap. However, they can’t produce nearly enough torque to operate the arm axes, so a form of gear
+                    reduction was required. I had two option I wanted to explore, using either a belt and pulley system,
+                    or a planetary gear box. Initially, I started my design using belts and pulleys as the backlash in
+                    planetary gearboxes are quite significant, and I wanted my arm to have at least a suitable level of
+                    accuracy and repeatability.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    However, the largest gear ratio I could achieve without using insanely large gears was 3.75, which
+                    after mounting to a test jig, was still incapable of producing enough torque. Instead, I ordered
+                    NEMA 17 stepper motors with a 50:1 planetary gear box attached onto the shaft, which could produce
+                    enough torque to support a decent payload being picked up by the arm, and was compact in design.
+                    There was some noticeable backlash, but with the arm spending most of its time leaning forward with
+                    the weight of the payload, gravity would be constantly loading the gearbox anyway, so the backlash
+                    wouldn’t be much of an issue. After a few design iterations, I ended up using 2x geared stepper
+                    motors for the lower and upper arm sections, but kept the belt and pulley system for the base
+                    rotation, as the torque required is much less.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-5.PNG">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-6.png">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-7.png">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    For the base rotation, I used a low-cost Lazy Susan bearing, which are typically used for rotating
+                    table tops and displays, but are much cheaper than slew rings. Using this bearing was essential to
+                    handle the high moment loads that the arm would experience when fully extended. Conveniently, the
+                    bearing also had mounting holes on both in the inner and outer sections, meaning I could simply bolt
+                    one half of the bearing to the base plate, and the other half to the robot arm.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The lower arm section was directly connected to the shaft of one of the motors, whereas the upper
+                    section was connected via an extended linkage to the shaft of the other motor. All the joints were
+                    connected using steel shafts and ball bearings. The two side panels of each arm section were secured
+                    together using threaded spacers, which made massive improvements to the arm rigidity and stiffness –
+                    although it somewhat limited the range of motion of each axis.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    With the arm more or less fully designed in CAD, I exported the pieces as DXF files, and laser cut
+                    them out of 5mm black acrylic. The different pieces were then glued or bolted together where
+                    necessary, and the motors were bolted on with accompanying mounting hardware.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-9.jpg">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-10.jpg">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-11.jpg">
+                    <img class="project-image image-small-square" src="../assets/images/robot-arm/robot-arm-12.jpg">
+                </div>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-medium-square" src="../assets/images/robot-arm/robot-arm-13.jpg">
+                </div>
+            </div>
+            <div class="text-justify">
+                <p>
+                    With the robot arm built, I needed a way to power the stepper motors and control the arms movement.
+                    To operate the motors, I chose to use the popular DRV8825 stepper driver (widely used for 3D
+                    printers), which supports a range of operating voltages and micro-stepping configurations. To
+                    control these drivers, I used an Arduino Nano, with GRBL installed, an open source high performance
+                    G-Code parser. Using GRBL allowed me to simply send the Arduino a desired XYZ coordinate, and GRBL
+                    would handle sending the appropriate number of pulses to the stepper drivers to move each motor the
+                    correct number of steps. To send g-code commands to the Arduino running GRBL, I used Universal
+                    G-Code Sender, a desktop application that allowed me to move the arm in increments to its desired
+                    position, save the co-ordinates, then move it to the next position, save again etc. I could then
+                    play back the saved position sequence and watch the arm perform the pre-programmed movements
+                    repeatedly.
+                </p>
+            </div>
+            <div>
+                <div class="image-container">
+                    <img class="project-image image-medium-square" src="../assets/images/robot-arm/robot-arm-14.jpg">
+                    <img class="project-image image-medium-square" src="../assets/images/robot-arm/robot-arm-15.jpg">
+                </div>
+            </div>
+            <div class="image-container">
+                <video class="project-image image-medium-square" width="400" height="auto" controls>
+                    <source src="../assets/images/robot-arm/robot-arm-demo-1.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+                <video class="project-image image-medium-square" width="400" height="auto" controls>
+                    <source src="../assets/images/robot-arm/robot-arm-demo-2.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I also designed a gripper, that uses a single servo and geared levers to open and close the jaws.
+                </p>
+            </div>
+            <div class="image-container">
+                <video class="project-image image-medium-square" width="400" height="auto" controls>
+                    <source src="../assets/images/robot-arm/robot-arm-gripper-demo-1.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+                <video class="project-image image-medium-square" width="400" height="auto" controls>
+                    <source src="../assets/images/robot-arm/robot-arm-gripper-demo-2.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 17/06/2020)
+            </div>
+        </section>
     </main>
     <footer class="main-footer">
         <span class="main-footer-text">
