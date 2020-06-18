@@ -22,15 +22,91 @@
             </ul>
         </nav>
     </header>
-    <main class="body-container main-tile">
-        <div>
-            <span class="project-card-info-title">Robot Arm Android Application</span>
-        </div>
-        <p class="project-card-info-text">
-           
-        </p>
-
-
+    <main class="body-container">
+        <section class="tile main-tile">
+            <div>
+                <span class="heading-1">Robot Arm Android Application</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Using my experience developing an Android application with Bluetooth connectivity for project
+                    Moonworks, I designed a similar application in Android Studio, but for controlling my robot arm.
+                    This enabled me to remotely control the robot arm without relying on a computer running a g-code
+                    generator being plugged in all the time. It was also quite amusing to hide with the app connected
+                    and randomly move the arm as people walked nearby.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-app/robot-arm-app-2.jpg">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-app/robot-arm-app-3.jpg">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The application had two interfaces, with the first containing all the main arm controls such as
+                    forward/backward, up/down, left/right and base rotation, as well has controls for the end effector
+                    servo motors. The current position of the robot arm is displayed at the top of the interface, and a
+                    convenient toggle switch control the speed the arm moves. A single press of the control buttons will
+                    move that axes 1mm, whereas holding down the buttons will increase/decrease the axes coordinates at
+                    a linear speed depending on the toggle switch position. The home button will immediately return the
+                    arm to its starting position.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The second interface can be accessed using the button at the bottom of the screen, which contains
+                    controls to record the arms position at multiple positions and playback the movement sequence. The
+                    user simply uses the first interface to manoeuvre the arm to its desired position, then switches to
+                    the second interface to hit the record button, which will add the current position to a list. The
+                    positions on the list can be sequentially played back by hitting the play button.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    To send g-code commands to GRBL, I made a circuit on vero board that contained 3x DRV8825 stepper
+                    drivers, a buck regulator to provide the correct voltage for the servo motors, a HC-05 Bluetooth
+                    module with a 3.3V-5V level shifter, and two Arduino Nanos. The first Arduino Nano handled the
+                    communication with the Android application, generated the signals to control the servo motors, and
+                    generated g-code commands to send to the second Arduino Nano, which was running GRBL. While it seems
+                    silly to use two Arduino Nanos, GRBL requires almost all of the Arduino’s memory, and you can’t have
+                    extra code running alongside GRBL as it would mess with the timers used to generate the high
+                    frequency pulses for the stepper drivers.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-app/robot-arm-circuit-2.jpg">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-app/robot-arm-circuit-3.jpg">
+            </div>
+            <div class="text-justify">
+                <p>
+                    An advantage of using the first Arduino Nano to generate the g-code commands is that it could
+                    perform reverse kinematics. This is the process of defining the positional co-ordinates for the end
+                    effector, and then calculating the angles of each axis to get to that position. For example, in
+                    relation to the application, when the user holds down the forward or reverse button, the inverse
+                    kinematic equations will calculate the angle of each arm section to move the end effector straight
+                    in that direction. Without this, the user would have to move each arm section bit by bit to get the
+                    end effector to move left or right in a straight line etc.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-app/robot-arm-app-serial.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The application sends serial commands to the HC-5 Bluetooth receiver in the format shown above, The
+                    first digit represents a manual movement, with the second digit representing a recorded movement,
+                    followed by the X, Y and Z positional co-ordinates, and lastly the angular position of the end
+                    effectors rotation and gripper servo motors. This is transmitted from the application as a 20-bit
+                    serial command to the first Arduino, which break apart the command into its different components, so
+                    it can update the servo position signals, and run the positional coordinates through the reverse
+                    kinematic equations to calculate the required angle of each arm joint. Lastly, the appropriate
+                    g-code string is formed, which is sent via serial to the second Arduino running GRBL to rotate the
+                    arms stepper motors.
+                </p>
+            </div>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 18/06/2020)
+            </div>
+        </section>
     </main>
     <footer class="main-footer">
         <span class="main-footer-text">
@@ -38,10 +114,10 @@
         </span>
         <nav class="footer-links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/linkedin-icon.png"></a></li>
-                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/github-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/linkedin-icon.png"></a></li>
+                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/github-icon.png"></a></li>
                 <li><a href="https://www.facebook.com/benjamin.griffiths.12" target="_blank"><img
                             class="social-media-icon" src="../assets/images/social-media/facebook-icon.png"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCVTjSwM3nGNfFX8bpMJtm_Q" target="_blank"><img
