@@ -95,7 +95,7 @@
                     The application sends serial commands to the HC-5 Bluetooth receiver in the format shown above, The
                     first digit represents a manual movement, with the second digit representing a recorded movement,
                     followed by the X, Y and Z positional co-ordinates, and lastly the angular position of the end
-                    effectors rotation and gripper servo motors. This is transmitted from the application as a 20-bit
+                    effectors rotation and gripper servo motors. This is transmitted from the application as a 20 character long
                     serial command to the first Arduino, which break apart the command into its different components, so
                     it can update the servo position signals, and run the positional coordinates through the reverse
                     kinematic equations to calculate the required angle of each arm joint. Lastly, the appropriate

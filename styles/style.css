@@ -92,6 +92,18 @@ html, body {
     text-align: right;
 }
 
+.text-italic {
+    font-style: italic;
+}
+
+a {
+    color: var(--heading-color-1);
+}
+
+a:hover {
+    color: var(--text-color-light);
+}
+
 /*####################
 ##### CONTAINERS #####
 ####################*/
@@ -306,13 +318,29 @@ html, body {
 }
 
 .image-large {
-    width: 600px;
+    width: 80%;
+    min-width: 100px;
     height: auto;
 }
 
 .image-large-square {
     width: 600px;
     height: 600px;
+}
+
+.table {
+    margin: 20px;
+    border-spacing: 10px;
+    text-align: center;
+}
+
+.table-border {
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+}
+
+.table-header {
+    font-weight: bold;
 }
 
 /*###########################

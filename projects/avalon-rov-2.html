@@ -22,21 +22,422 @@
             </ul>
         </nav>
     </header>
-    <main class="body-container main-tile">
-        <div>
-            <span class="project-card-info-title">Underwater ROV Competition v2</span>
-        </div>
-        <p class="project-card-info-text">
-            As part of the fourth year group project for my degree,
-            I was part of the electrical team, and the lead software
-            engineer in The University of Sheffield's team Avalon.
-            This was a multidisciplinary student led team, tasked
-            with designing and manufacturing an underwater remotely
-            operated vehicle (ROV) to compete at the 2020 Marine And
-            Technology Education (MATE) competition.
-        </p>
-
-
+    <main class="body-container">
+        <section class="tile main-tile">
+            <div>
+                <span class="heading-1">Underwater ROV Competition v2</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    As part of the fourth-year group project for my degree, I was part of the electrical team, and the
+                    lead software engineer in The University of Sheffield's team Avalon. This was a multidisciplinary
+                    student led team, tasked with designing and manufacturing an underwater remotely operated vehicle
+                    (ROV) to compete at the 2020 <a href="https://materovcompetition.org/" target="_blank">Marine and
+                        Technology Education (MATE) competition</a>.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-small" src="../assets/images/avalon-2020/mate-rov-logo.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The theme of the 2020 competition was ocean pollution, so tasks to perform included detecting
+                    unhealthy coral reefs, collecting plastic pollution from the ocean floor and the surface, and
+                    maintaining seabins.
+                </p>
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">ROV Control Program</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    My main contribution towards this project was designing and developing a graphical user interface to
+                    pilot the ROV. The interface would be used by the pilot to manoeuvre the ROV and control its
+                    on-board devices during the competition, all whilst the ROV is fully submerged.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The key functional requirements of the program are as follows:
+                </p>
+                <ul>
+                    <li>Serial communication with the ROVs electronics control system</li>
+                    <li>Receive pilot inputs from a controller</li>
+                    <li>Perform thrust vectoring to control the ROV’s thrusters</li>
+                    <li>Toggle the ROV’s pneumatic actuators</li>
+                    <li>Read and display measurements from a range of sensors</li>
+                    <li>Bind controller buttons to ROV functions</li>
+                    <li>Display live on-board camera feeds from a range of USB, IP and analogue cameras</li>
+                    <li>Process the camera feeds with machine vision algorithms</li>
+                    <li>Make the program highly configurable to adapt to future ROV designs</li>
+                    <li>Save the programs configuration to different user profiles</li>
+                </ul>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I developed the program in Python using the PyQt5 library, a Python binding of the popular Qt
+                    application development framework. And other libraries such as PySerial, PyGame and OpenCV were used
+                    for serial communication with the ROV, receiving data from an XBOX One controller and displaying
+                    camera feeds.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-large" src="../assets/images/avalon-2020/gui-control-panel.png">
+                <img class="project-image image-large" src="../assets/images/avalon-2020/gui-configuration.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The user interface is split into a control panel and configuration tab, which can be flipped between
+                    using the navigation buttons at the top of the program.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The control panel tab contains all the essential controls the pilot requires to operate the ROV
+                    during the competition, such as viewing live camera feeds, initiating serial communication links,
+                    toggling actuators and viewing sensors readings. It was designed to be user friendly and intuitive
+                    so that the pilot could focus on the competition tasks and access ROV controls quickly. Since the
+                    pilot is not permitted to see the physical ROV during the competition, they must rely solely on live
+                    camera feeds, hence they are the main attraction on the control panel. There is one large primary
+                    feed, and three smaller secondary feeds, which can all display any of the available camera via USB
+                    or an RTSP stream. If the pilot wants to display one of the secondary cameras on the large feed, all
+                    they have to do it click on the secondary feed, and it will swap with the primary feed.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The configuration tab is where the program is configured to match the pilot’s preferences and ROV
+                    setup. Almost every aspect of the program is configurable, such as the number of actuators, the
+                    address of the camera feeds, the location of each thruster and the preferred controller key
+                    bindings. The programs configuration can be saved to user profiles, which are loaded during program
+                    launch to apply the settings. Multiple user profiles can be set up to match different ROV
+                    configurations or different pilot key binding preferences.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    There is even a light theme available for those who prefer it, or for when the sun is shining.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/gui-control-panel.png">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/gui-control-panel-light.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The code and documentation for the program can be found on the <a
+                        href="https://github.com/AvalonROV/ROV_SW_GUI_2020" target=_blank>GitHub repository</a>.
+                </p>
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">Embedded Software</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I was also responsible for developing the code embedded in the ROVs on-board microcontroller, which
+                    is written in C/C++ and is responsible reacting to commands from the ROV control program, to
+                    generate the signals that control the ROV’s on-board devices. These include generating PWM signals
+                    for H-bridge modules, processing incoming data from the tether, and using communication protocols
+                    such as SPI and I2C to read data from sensors. The program was developed on the Arduino platform,
+                    which made preliminary testing possible on a standard Arduino Uno development board, independent of
+                    the full electronics control system.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The functionality of the embedded software is centred around a custom communication protocol, which
+                    uses human-readable ASCII string commands to control the ROV. Each command consists of a) Command
+                    initialiser, b) Function identifier and c) Data where necessary. The diagram and table below show
+                    the basic structure of the commands, and a few example commands that the ROV control program would
+                    typically send.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/communication-protocol.png">
+            </div>
+            <div class="image-container">
+                <table class="table table-border">
+                    <tr class="table-header">
+                        <th>Operation</th>
+                        <th>Initialiser</th>
+                        <th>Identifier</th>
+                        <th>Data</th>
+                    </tr>
+                    <tr>
+                        <td>Get ROV identity</td>
+                        <td>?I</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Turn actuators 1 & 3 ON</td>
+                        <td>?R</td>
+                        <td>A</td>
+                        <td>101</td>
+                    </tr>
+                    <tr>
+                        <td>Set thrusters 1 & 3 to full speed</td>
+                        <td>?R</td>
+                        <td>T</td>
+                        <td>999500999500500500500500</td>
+                    </tr>
+                    <tr>
+                        <td>Get sensor readings</td>
+                        <td>?R</td>
+                        <td>S</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The code and documentation for the embedded software can be found on the <a
+                        href="https://github.com/AvalonROV/ROV_SW_CONTROL_2020" target=_blank>GitHub repository</a>.
+                </p>
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">Electronics Control System</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    As a member of the electrical team, I also contributed to the design and manufacture of the
+                    electronics control system, which is mounted inside a water tight capsule on the ROVs chassis, and
+                    is responsible for controlling all the electronics, electro-mechanical devices, and communicating
+                    with the surface via the tether. The physical structure was similar to the design we came up with
+                    for the 2019 MATE ROV competition, taking the form of an interconnected stack of modular PCBs shown
+                    below, but the circuit design is completely new. I designed the interface PCBs, and used CAD to
+                    design the underwater connector layout. The interface PCBs are responsible for routing power and
+                    data signals from the underwater connecters to the data PCB, designed by Joe Orford <a
+                        href="https://www.linkedin.com/in/joe-orford/" target="_blank">(LinkedIn)</a>, the power PCB,
+                    designed by George
+                    Osmond <a href="https://www.linkedin.com/in/george-osmond/" target="_blank">(LinkedIn)</a>, and the
+                    electronics
+                    speed controller (ESC) PCBs, designed by Henry O’Keeffe <a
+                        href="https://www.linkedin.com/in/henry-o-keeffe-426083198/" target="_blank">(LinkedIn)</a>.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-large" src="../assets/images/avalon-2020/capsule-labelled.png">
+                <img class="project-image image-large" src="../assets/images/avalon-2020/pcb-stack-labelled.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    As their names suggest, the data PCB is responsible for all the low-level signals within the control
+                    system, and contains the main microcontroller for the control software to run on, and multiplexers
+                    to switch between camera feeds. In contrast, the power PCB handles all the high current and high
+                    voltage signals, such as the main switching regulators, h-bridges to control the pneumatic solenoid
+                    valves, and the high current traces for all 8 of the 3-phase thruster motors. The ESCs connect to
+                    the underside of the power PCB, and generate the 3-phase synchronous signals to control the speed of
+                    the Blue Robotics T200 brushless thrusters.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The interface PCBs are bolted to both end caps of the capsule. The power side interface PCB routes
+                    the main +48V power input and 8x 3-phase thruster lines to the power PCB. On the other hand, the
+                    data interface PCB routes the digital and analogue camera, sensor, h-bridge, mini-ROV and tether
+                    lines to the data and power PCBs, whilst routing data lines between the data and power PCBs to
+                    control the h-bridges and ESCs.
+                </p>
+            </div>
+            <div class="image-container">
+                <table class="table">
+                    <tr>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/power-end-front-real.jpg"></td>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/data-end-front-real.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/power-end-back-real.jpg"></td>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/data-end-back-real.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-italic">Power End Interface PCB</td>
+                        <td class="text-italic">Data End Interface PCB</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The underwater connectors were supplied by MacArtney and Bulgin, with the MacArtney connectors been
+                    used primarily for high current connections such as the thrusters and main power input, whereas the
+                    Bulgin connectors were used for data connection such as USB and fibre optic. I designed the
+                    connector layout in Autodesk Fusion 360, where the connectors are sealed to a 10mm thick clear
+                    acrylic mounting plate, which is bolted to the capsules end caps. The wires from the connectors are
+                    then terminated to the interface PCBs via solder or other connectors. Having access to underwater
+                    connectors was a massive addition to the project, allowing us to disconnect all the ROVs on-board
+                    devices, which helps with cable management and maintenance, something which was a struggle in
+                    previous competitions.
+                </p>
+            </div>
+            <div class="image-container">
+                <table class="table">
+                    <tr>
+                        <td><img class=" project-image image-small-square"
+                                src="../assets/images/avalon-2020/power-endcap-front.jpg"></td>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/data-endcap-front.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/power-endcap-back.jpg"></td>
+                        <td><img class="project-image image-small-square"
+                                src="../assets/images/avalon-2020/data-endcap-back.jpg"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-italic">Capsule power endcap</td>
+                        <td class="text-italic">Capsule data endcap <br>(without Bulgin connectors)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The data end of the capsule had too many connectors to comfortably fit onto the 4” diameter end cap,
+                    so an extension was designed, which increased the surface area available to attach connectors, and
+                    provided more area to manage the large number of wires. However, the COVID-19 pandemic restricted
+                    our access to the manufacturing facilities required before we could produce this part.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/pcb-stack-1.jpg">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/pcb-stack-2.jpg">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/pcb-stack-3.jpg">
+            </div>
+            <div class="text-justify">
+                <p>
+                    In addition to the main electronics control system, I designed a compact testing PCB for the ESC
+                    modules, which would allow the ESC software to be developed and tested independently to the rest of
+                    the system, eliminating any progress bottle necks. The board contained an ATmega 32u4
+                    microcontroller, a connector for an ESC module to slot into, the +48V main input and 3-phase
+                    terminal block connector, along with a range of buttons, switching and LEDs for control and
+                    debugging.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium-square" src="../assets/images/avalon-2020/esc-test-pcb-1.jpg">
+                <img class="project-image image-medium-square" src="../assets/images/avalon-2020/esc-test-pcb-2.jpg">
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">ROV Chassis</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    To test the electronics control system, in particular, the thrust vectoring algorithm to control the
+                    ROVs thruster, we needed a chassis. Initially, I designed a simple test jig that could mount all 8
+                    thrusters to test the algorithm is a container of water, which helped to fine tune to control
+                    sensitivity and verify 6-axis control could be achieved. The thruster configuration had each
+                    thruster offset by 45° to the X, Y and Z axis, which in theory could provide the greatest thrust in
+                    all 8 axes of control. However, this test jig could only mount the thrusters, not the whole
+                    electronics control system or other devices.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium-square"
+                    src="../assets/images/avalon-2020/rov-test-chassis-1.jpg">
+                <video class="project-image image-medium-square" width="400" height="auto" controls>
+                    <source src="../assets/images/avalon-2020/rov-chassis-demo.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div class="text-justify">
+                <p>
+                    A few weeks later I started designing a full ROV chassis, inspired by the TIE fighter design from
+                    Star Wars (well, I think it looks similar), that could be manufactured via laser cutting the side
+                    panels from 6mm Delrin (also known as Acetal), and then using a strip heater to bend the required
+                    sections. The design, shown below, with the angled sections to mount the thrusters to was
+                    advantageous because it allowed the space within the chassis to be maximised, whilst keeping the
+                    chassis within the competition size constraints (must fit inside a 64cm diameter circle). This would
+                    result in easier mounting of the various cameras, actuatorS, and managing cables without blocking
+                    the thrusters. The cross beams that connect the two side panels together (same as previous ROV
+                    designs) have a uniform grid of mounting holes, to mount all the ROVs on-board devices in a highly
+                    modular fashion. Unfortunately, the COVID-19 pandemic caused all the universities manufacturing
+                    facilities to close down before we could get the chance to manufacture it, so for now the design
+                    will have to wait until future competitions.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/rov-chassis-1.PNG">
+                <img class="project-image image-medium" src="../assets/images/avalon-2020/rov-chassis-2.PNG">
+                <video class="project-image image-large" width="400" height="auto" controls autoplay>
+                    <source src="../assets/images/avalon-2020/rov-chassis-animation.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">Surface Control Station</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    In previous competitions, all the equipment required on the surface to pilot the ROV such as the
+                    computer, camera DVR, power supplies, monitors and controllers have all been separate pieces, that
+                    have to be rushed to be connected up before we can start the tasks. For the 2020 competition, I
+                    wanted to simplify and speed up this process, by developing a surface control station – a box with
+                    everything contained, so that the pilot can simply open the box, turn it on, and everything is
+                    already connected ready to go. Ultimately, I wanted an all-in-one, solution to pilot the ROV on
+                    location. After a few hours of online shopping for equipment cases, we settled for the MAXCASE
+                    Max-800 rugged and waterproof plastic case, which was the perfect width to fit two monitors side by
+                    side in the lid, and deep enough to fit the computer and other miscellaneous equipment.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The monitors were connected to the inside of the lid using heavy duty 3M Velcro, which so strong we
+                    might as well have glued the monitors in place. One monitor is for displaying the ROV control
+                    programs interface, and the other is to display the DVR output to view the low-latency analogue
+                    camera feeds (as a backup). The base of the case contained a custom-built PC to run the ROV control
+                    program on, a router to stream the analogue camera feeds to the PC via ethernet, and the relevant
+                    power supplies. The base was covered in panels which contained configurable buttons, power switches
+                    and connectors as well as the connectors to attach the ROVs tether, including ethernet, fibre optic
+                    and +48V power. Furthermore, the base of the case had space to store a keyboard and XBOX controller.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Whilst we made a start on manufacturing the surface control station, the COVID-19 pandemic closed
+                    crucial manufacturing facilities before we got the change to laser cut the panels, but we got the PC
+                    and monitors up and running.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-large" src="../assets/images/avalon-2020/surface-control-station-1.PNG">
+                <img class="project-image image-medium"
+                    src="../assets/images/avalon-2020/surface-control-station-2.jpg">
+                <img class="project-image image-medium"
+                    src="../assets/images/avalon-2020/surface-control-station-3.jpg">
+                <video class="project-image image-medium" width="400" height="auto" controls autoplay>
+                    <source src="../assets/images/avalon-2020/Control-Station-Animation-1.m4v" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div>
+                <br>
+                <span class="heading-2">Final Report & Presentation</span>
+            </div>
+            <div class="text-justify">
+                <p>
+                    As this project went towards my degree, we wrote a detailed <a
+                        href="../assets/images/avalon-2020/Dissertation.pdf" target="_blank">final report</a> and I
+                    put together out fina symposia video presentation shown below.
+                </p>
+            </div>
+            <div class="image-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/SFPfXkY8tQc" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <br>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 19/06/2020)
+            </div>
+        </section>
     </main>
     <footer class="main-footer">
         <span class="main-footer-text">
@@ -44,10 +445,10 @@
         </span>
         <nav class="footer-links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/linkedin-icon.png"></a></li>
-                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/github-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/linkedin-icon.png"></a></li>
+                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/github-icon.png"></a></li>
                 <li><a href="https://www.facebook.com/benjamin.griffiths.12" target="_blank"><img
                             class="social-media-icon" src="../assets/images/social-media/facebook-icon.png"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCVTjSwM3nGNfFX8bpMJtm_Q" target="_blank"><img
