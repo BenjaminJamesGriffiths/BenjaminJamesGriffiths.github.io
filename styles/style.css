@@ -61,10 +61,10 @@ html, body {
     padding: 0.5em 1em;
 }
 
-.main-nav a:hover {
+.main-nav a:hover, .header-active{
     transform: scale(1.1);
     background-color: var(--button-color-pressed);
-    color: white;
+    color: white !important;
 }
 
 /*####################
@@ -84,6 +84,10 @@ html, body {
 
 .text-justify {
     text-align: justify;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .page-details {
