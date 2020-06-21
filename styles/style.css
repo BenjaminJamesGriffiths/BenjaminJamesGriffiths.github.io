@@ -250,6 +250,26 @@ a:hover {
 /*#####################
 #### PROJECTS PAGE ####
 #####################*/
+.project-container {
+    flex-wrap: nowrap !important;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 700px) {
+    .project-container {
+        flex-wrap: nowrap !important;
+        flex-direction: column;
+    }
+
+    .projects-info-container {
+        margin: -40px 0 0 0 !important;
+        display: inline-block;
+        width: 50%;
+        min-width: 250px;
+    }
+  }
+
 .projects-image-container {
     display: inline-block;
 }
@@ -263,9 +283,10 @@ a:hover {
 }
 
 .projects-info-container {
-    margin: -40px;
+    margin: 0 0 0 -40px;
     display: inline-block;
     width: 50%;
+    min-width: 250px;
 }
 
 .rounded-button {
