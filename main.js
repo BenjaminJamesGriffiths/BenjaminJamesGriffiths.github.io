@@ -48,10 +48,3 @@ siemensChallengeButton.onclick = function() {
 moonworksButton.onclick = function() {
     window.open("projects/moonworks.html", "_self");
 }
-
-// flex reorder for projects page
-@media screen and (max-width: 500px) {
-    .classname {
-      flex-direction: column;
-    }
-  }
