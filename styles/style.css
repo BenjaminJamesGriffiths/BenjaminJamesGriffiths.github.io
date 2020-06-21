@@ -333,7 +333,8 @@ a:hover {
 }
 
 .image-medium {
-    width: 400px;
+    width: 40%;
+    min-width: 300px;
     height: auto;
 }
 
@@ -344,7 +345,7 @@ a:hover {
 
 .image-large {
     width: 80%;
-    min-width: 100px;
+    min-width: 300px;
     height: auto;
 }
 
