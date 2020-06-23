@@ -15,15 +15,18 @@
   }
 
 html, body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, var(--background-color-1), var(--background-color-2));
     background-repeat: no-repeat;
     font-family: "Titillium Web";
     color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
