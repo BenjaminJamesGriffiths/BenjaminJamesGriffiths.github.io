@@ -186,7 +186,7 @@ a:hover {
     display: inline-block;
     box-shadow: 1px 0px 15px 1px black;
     width: 50%;
-    height: 100vh;
+    height: 100%;
 }
 
 .home-right-side {
