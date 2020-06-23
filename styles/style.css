@@ -139,7 +139,9 @@ a:hover {
 }
 
 .content-splitter {
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     width: 100%;
     text-align: center;
     margin-top: 60px;
@@ -148,11 +150,10 @@ a:hover {
 
 .content-splitter:before, .content-splitter:after {
     content: "";
-    display: inline-block;
-    vertical-align: middle;
+    margin: auto 5px;
     border-top: 1px solid var(--text-color);
-    width: 20%; 
-    height: 1em;  
+    width: 20%;
+    
 }
 
 /*#####################
