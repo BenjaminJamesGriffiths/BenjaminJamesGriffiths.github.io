@@ -48,3 +48,22 @@ siemensChallengeButton.onclick = function() {
 moonworksButton.onclick = function() {
     window.open("projects/moonworks.html", "_self");
 }
+
+// 2017 projects
+let fanControllerButton = document.getElementById('fan-controller-button');
+
+fanControllerButton.onclick = function() {
+    window.open("projects/fan-controller.html", "_self");
+}
+
+// 2016 projects
+let boostPedalButton = document.getElementById('boost-pedal-button');
+let pedalBoardButton = document.getElementById('pedal-board-button');
+
+boostPedalButton.onclick = function() {
+    window.open("projects/boost-pedal.html", "_self");
+}
+
+pedalBoardButton.onclick = function() {
+    window.open("projects/pedal-board.html", "_self");
+}
