@@ -40,15 +40,38 @@ main {
     justify-content: center;
 }
 
+/*###########################
+####### MEDIA QUERIES #######
+###########################*/
+@media screen and (max-width: 700px) {
+
+    /* arrange project tiles */
+    .project-container {
+        flex-wrap: nowrap !important;
+        flex-direction: column !important;
+    }
+
+    .projects-info-container {
+        margin: -40px 0 0 0 !important;
+        display: inline-block;
+        width: 50%;
+        min-width: 250px;
+    }
+
+    /* arrange home page */
+    .home-body {
+        flex-direction: column;
+    } 
+  }
+
 /*############################
 ####### NAVIGATION BAR #######
 ############################*/
 .main-header {
     display: flex;
+    flex-wrap: wrap !important;
     justify-content: center;
     align-items: center; 
-    flex-wrap: wrap;
-    margin-bottom: 40px;
 }
 
 .main-header-home {
@@ -175,9 +198,7 @@ a:hover {
 
 .main-title {
     display: inline-block;
-    border-right: 3px solid #bdbdbd;
     margin-top: 80px;
-    padding-right: 40px;
     color: #f5f5f5;
     font-family: "Fjalla One";
     font-size: 5vw;
@@ -188,20 +209,19 @@ a:hover {
 .main-title-small {
     font-size: 2em;
     margin: 20px 0 20px 0;
-    padding-right: 40px;
 }
 
 .home-left-side {
-    display: inline-block;
+    display: block;
     box-shadow: 1px 0px 15px 1px black;
-    width: 50%;
+    flex: 1;
     min-height: 100vh;
     height: 100%;
 }
 
 .home-right-side {
-    display: inline-block;
-    width: 50%;
+    display: block;
+    flex: 1;
     background-image: url("../assets/images/home-background.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -210,6 +230,7 @@ a:hover {
 
 .home-body {
     display: flex;
+    flex-direction: row;
 }
 
 .home-text-container {
@@ -266,20 +287,6 @@ a:hover {
     flex-direction: row;
     margin-bottom: 20px;
 }
-
-@media screen and (max-width: 700px) {
-    .project-container {
-        flex-wrap: nowrap !important;
-        flex-direction: column;
-    }
-
-    .projects-info-container {
-        margin: -40px 0 0 0 !important;
-        display: inline-block;
-        width: 50%;
-        min-width: 250px;
-    }
-  }
 
 .projects-image-container {
     display: inline-block;
