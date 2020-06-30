@@ -373,14 +373,21 @@ a:hover {
 }
 
 .table {
+    border-collapse: separate;
+    width: fit-content;
+    color: var(--text-color);
     margin: 20px;
     border-spacing: 10px;
     text-align: center;
 }
 
+.table td, .table th {
+    border: none;
+}
+
 .table-border {
     border: 1px solid var(--text-color);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .table-header {
