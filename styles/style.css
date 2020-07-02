@@ -33,8 +33,8 @@ main {
     flex: 1;
 }
 
-.body-container {    
-    max-width: 1000px;
+.body-container {  
+    max-width: 1200px;
     margin: 0px auto;
     padding: 0 1.5em;
     justify-content: center;
@@ -157,6 +157,7 @@ a:hover {
 }
 
 .tile {
+    box-sizing: unset;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -410,12 +411,17 @@ a:hover {
     margin: 0;
 }
 
+.footer-links ul {
+    padding: 20px;
+    margin: 0;
+}
+
 .footer-links li {
-    display: inline;
+    display: inline-block;
 }
 
 .social-media-icon {
-    padding: 0 5px;
+    margin: 0 5px;
     height: 30px;
     width: 30px;
     filter: invert(1);
