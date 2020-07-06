@@ -108,6 +108,10 @@ main {
     font-size: 2em;
 }
 
+.heading-1-detail {
+    font-size: 0.9em;
+}
+
 .heading-2 {
     color: var(--heading-color-2);
     font-family: "Fjalla One";

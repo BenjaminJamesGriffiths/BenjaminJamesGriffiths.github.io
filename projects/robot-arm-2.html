@@ -40,8 +40,179 @@
             </div>
             <div class="text-justify">
                 <p>
-                    Details coming soon...
+                    Whilst my <a href="robot-arm.html" target="_self">first design</a> of a desktop robot arm was a
+                    success, there were a few problems and design
+                    flaws that I wanted address in the 2nd design revision.
                 </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    Firstly, the base rotation mechanism, which used a standard NEMA 17 stepper motor with a 3.75:1
+                    reduction belt and pulley gearing system, would often skip steps when performing fast movements, and
+                    was prone to stalling. This mechanism was replaced with a 27:1 planetary geared NEMA 17 motor,
+                    similar in design to the 50:1 planetary geared motor used for lower and upper arm sections.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Whilst the 50:1 gear ratio was excellent at amplifying the torque from the NEMA 17 motors to a
+                    usable level, it came with a significant speed reduction. The base rotation did not have nearly the
+                    same torque requirements of the main arm sections, so a lower gear ratio was chosen to achieve a
+                    higher speed of rotation.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium"
+                    src="../assets/images/robot-arm-v2/robot-arm-1-base-rotation.png">
+                <img class="project-image image-medium"
+                    src="../assets/images/robot-arm-v2/robot-arm-2-base-rotation.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The second problem with the design was the rods used to form the parallelogram, responsible for
+                    rotation the upper arm section and keeping the end effector perfectly level, irrespective of its
+                    position within the arms available reach. The shape of these rode was initially designed for
+                    clearance reasons, however, when under tension, they tended to deform. This was fixed in the new
+                    design by using thicker, straight rods.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1-rod.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-rod.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The third problem was the available reach the arm could achieve, which was limited by the threaded
+                    spacers used to connect the lower and upper arm section panels together. The upper arm section and
+                    rods would collide with these threaded spacers when moved to extreme angles. This was fixed in the
+                    new design by placing the threaded spacers in less conflicting locations, expanding the available
+                    reach of the arm significantly.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1-reach-1.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-reach-1.png">
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1-reach-2.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-reach-2.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The fourth problem with the original design was the way the side panels that mount the main motors
+                    were attached to the base plate. They were attached using laser cut tabs and Cyanoacrylate adhesive,
+                    which by no means made a weak connection, it just meant I couldn’t easily access certain areas of
+                    the arm such as the motor mounting bolts, without having the take the entire arm apart.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    This was fixed in the new design by replacing the tab and glue approach with two short pieces of
+                    aluminium extrusion that act as sturdy right-angle brackets. Each side panel was bolted to the
+                    aluminium extrusion, making assembly/disassembly far simpler.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1-side-panel.PNG">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-side-panel.PNG">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The fifth problem was the end effector rotation, where the actual rotating part was only attached to
+                    the arm via servo shaft, which is supported only by small bushing, resulting in significant wobble.
+                    In the new design, I redesigned the end effector to incorporate a thrust bearing and a dedicated
+                    shaft to increase the stiffness of the whole assembly, and make it more resilient to moment forces.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium"
+                    src="../assets/images/robot-arm-v2/robot-arm-1-end-effector.png">
+                <img class="project-image image-medium"
+                    src="../assets/images/robot-arm-v2/robot-arm-2-end-effector.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The sixth problem was the mounting hubs used to connect the arm sections to the motor shafts. In the
+                    original design, aluminium mounting hubs with M3 mounting holes were used, which are secured to the
+                    motor shaft via a tiny grub screw. It shouldn’t come as a surprise that these mounting hubs were not
+                    at all suitable for the torque required to lift payloads at large distances. I found myself
+                    constantly tightening up the grub screw, to the point where the threads became stripped, and the
+                    grub screw ruined the flat section of the motors D-shaped shaft, which was made with quite a soft
+                    steel.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    This was fixed in the new design by using clamp style mounting hubs, typically used to secure linear
+                    rails on 3-D printers and other devices. I couldn’t find any D-shape mounting hubs that would fit
+                    the motor shaft size, but a regular 8mm circular clamping mounting hub worked perfectly, never
+                    slipped, and even allows the motors to be back driven without inflicting damage.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-1-mounting-hub.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-mounting-hub.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The final problem was the arms unawareness of its position. In the original design, I had to
+                    manually jog the arm to its home position and enter the home command on the control software every
+                    time the arm was powered on. Which was both tedious and prevented any basic form of repeatability,
+                    as I was jogging the arm to it’s home position by eye.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    This has been fixed in the new design with limit switches mounted on the axes that contains stepper
+                    motors. The homing command in GRBL (CNC control software) can be called when the arm is powered on,
+                    which individually moves each axis until the limit switch is activated. This allows the arm to
+                    repeat movements perfectly, no matter the position of the arm when it’s powered on. It’s not closed
+                    loop control by any means, which would be ideal and requires expensive optical encoders, but it’s
+                    certainly an improvement.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-limit-switch-1.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-2-limit-switch-2.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    Overall, the design of the arm was greatly improved, and I managed to get most of it manufactured,
+                    but ultimately never got round to putting it all together as university work started to pile up.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    I also wanted to mount the electronics onto the arm itself, eliminating the mess of cables that were
+                    present in the original design. I designed a custom PCB, that contained two ATmega 328p’s just like
+                    the previous circuit design, with one running the GRBL software, and the other handling the commands
+                    from the control program and controlling the servo motors. The stepper driver of choice was the
+                    Trinamic TMC2209, which includes their “StealthChop” technology, providing much quieter stepper
+                    motor operation. The board contained a USB socket to send serial commands via an FT232RL USB to
+                    serial UART interface, and a MAX12931 digital signal isolator for protection. A +5V switching
+                    regulator was used to power the logic devices on the board from the +24V supply voltage. JST
+                    XH-series connectors were used to connect the stepper motors, servos, and limit switches to the
+                    board. Additionally, two VNH7070 full-bridges were included in-case I wanted to power brushed motors
+                    in the future.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-pcb-front.png">
+                <img class="project-image image-medium" src="../assets/images/robot-arm-v2/robot-arm-pcb-routing.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    Due to university commitments, I never got round to sending the board off for manufacture, but it
+                    was a worthwhile project, and was a good opportunity to gain more experience using Ki-CAD and
+                    Autodesk Fusion 360.
+                </p>
+            </div>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 06/07/2020)
             </div>
         </section>
     </main>
@@ -51,10 +222,10 @@
         </span>
         <nav class="footer-links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/linkedin-icon.png"></a></li>
-                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/github-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/linkedin-icon.png"></a></li>
+                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/github-icon.png"></a></li>
                 <li><a href="https://www.facebook.com/benjamin.griffiths.12" target="_blank"><img
                             class="social-media-icon" src="../assets/images/social-media/facebook-icon.png"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCVTjSwM3nGNfFX8bpMJtm_Q" target="_blank"><img
