@@ -40,8 +40,122 @@
             </div>
             <div class="text-justify">
                 <p>
-                    Details coming soon...
+                    Following the success of the Android application I developed to control my robot arm, I developed a
+                    robot arm control desktop application as a project to learn Python and PyQt5 (the Python binding of
+                    the popular Qt application framework). The application had an easy to use graphical user interface,
+                    and builds on the functionality of the original app. The code can be found on the <a
+                        href="https://github.com/BenjaminJamesGriffiths/robot-arm-control-panel" target="_blank">GitHub
+                        repository.</a>
                 </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-large" src="../assets/images/robot-arm-controller/controller-interface-1.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The application communicated via a USB cable to an Arduino with GRBL (open-source CNC control
+                    software) installed. Serial G-code commands could then be sent from the program to the Arduino to
+                    move the robot arms motors.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The diagram below highlights the different sections of the interface.
+                </p>
+            </div>
+            <div class="image-container">
+                <img class="project-image image-large" src="../assets/images/robot-arm-controller/controller-interface-labelled.png">
+            </div>
+            <div class="text-justify">
+                <p>
+                    The main part of the program is the jog controls, which are split into arm and end effector
+                    controls. The arm controls include buttons for jogging each axis, and sliders to control how much
+                    the arm moves for each button press. Similarly, the end effector controls include buttons to jog the
+                    angle of the end effector, and open/close the gripper, with adjustment sliders.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The program is equipped with inverse kinematics, which is why the arm control buttons are labelled
+                    forward/backward, left/right, up/down and so on, rather than having button for each specific motor.
+                    When the forward button is pressed, the inverse kinematic equations calculate the required angles
+                    for each axis to move the end effector straight forward by the specified amount. The pre-configured
+                    GRBL software running on the Arduino then calculates how many steps the NEMA-17 stepper motors need
+                    to move from their current position to reach the new position, taking into account the planetary
+                    gear box ratios.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    A 3D graph is displayed in the top left of the interface, using Matplotlib, which uses graphical
+                    lines to represent the current position of each arm axis. This can be used to simulate the position
+                    of the robot arm without having the physical robot arm connected.
+                </p>
+            </div>
+            <div class="image-container">
+                <video class="project-image image-large" width="400" height="auto" controls>
+                    <source src="../assets/images/robot-arm-controller/controller-interface-simulation.mp4" type="video/mp4">
+                    Your browser does not support this video.
+                </video>
+            </div>
+            <div class="text-justify">
+                <p>
+                    On top right side of the interface, the serial interface can be configured by selecting the COM port
+                    of the Arduino, and functions such as calibrating (via limit switches) and homing can be executed.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    In the centre of the interface, the current position coordinates of each robot arm axis are
+                    displayed, and can be edited via keyboard input to set an exact position.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The bottom half of the interface is responsible for configuring user-defined position sequences that
+                    the arm can perform. The user can either create sequence file, or open an existing one in the form
+                    of a standard .txt file, containing lines of G-code commands.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The user can the jog the arm using the control buttons to its desired position, before pressing the
+                    Add New button, which will add the current position to the list. The user can then move the arm to
+                    the next position, press Add New and so on. There are also options to overwrite a position on the
+                    list by selecting a position on the list before pressing the Replace button. The Remove button will
+                    delete the selected list item, obviously, and the Move Up and Move Down buttons will shift the
+                    selected list item up and down the list.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The speed dial determines the speed at arm moves to each position, and is saved to each position on
+                    the list, allowing some movements to be slow, and others rapid.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Once a sequence has been programmed, the Play and Stop buttons can be pressed to make the arm
+                    sequentially move to each position on the list. If the repeat toggle is enabled, the arm will
+                    continuously repeat the same movements until manually stopped – useful to automating tasks.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    Overall, the project was a success, and as my first exposure to object orientated programming, I
+                    learnt a lot about the features of Python, using Classes and the different widgets/layouts available
+                    in PyQt5.
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    The knowledge and experience obtained during this little project were essential for developing the
+                    main pilot control interface for an <a href="avalon-rov-2.html">underwater remotely operated vehicle
+                        competition.</a>
+                </p>
+            </div>
+            <div class="page-details">
+                Written by Benjamin Griffiths (Date modified: 09/07/2020)
             </div>
         </section>
     </main>
@@ -51,10 +165,10 @@
         </span>
         <nav class="footer-links">
             <ul>
-                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/linkedin-icon.png"></a></li>
-                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img 
-                            class="social-media-icon" src="../assets/images/social-media/github-icon.png"></a></li>
+                <li><a href="https://www.linkedin.com/in/b3ngriffiths/" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/linkedin-icon.png"></a></li>
+                <li><a href="https://github.com/BenjaminJamesGriffiths" target="_blank"><img class="social-media-icon"
+                            src="../assets/images/social-media/github-icon.png"></a></li>
                 <li><a href="https://www.facebook.com/benjamin.griffiths.12" target="_blank"><img
                             class="social-media-icon" src="../assets/images/social-media/facebook-icon.png"></a></li>
                 <li><a href="https://www.youtube.com/channel/UCVTjSwM3nGNfFX8bpMJtm_Q" target="_blank"><img
